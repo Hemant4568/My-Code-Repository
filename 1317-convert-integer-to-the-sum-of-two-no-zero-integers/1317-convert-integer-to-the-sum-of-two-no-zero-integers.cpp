@@ -1,8 +1,9 @@
-/*class Solution {
+class Solution {
 public:
-    int c=0;
+    
     int totalzero(int n)
     {
+        int c=0;
         while(n>0)
         {
             if(n%10==0)
@@ -19,8 +20,8 @@ public:
         }
         return {};
     }
-};*/
-class Solution {
+};
+/*class Solution {
 public:
     int containZero(int n){
         int count = 0;
@@ -37,4 +38,4 @@ public:
         }
         return {};
     }
-};
+};*/
