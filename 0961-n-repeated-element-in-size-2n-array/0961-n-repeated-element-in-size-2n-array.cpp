@@ -9,8 +9,9 @@ public:
         }
         for(int i=0;i<nums.size();i++)
         {
-            if(m[nums[i]]>1)
+            if(m[nums[i]]>1){
                 a=nums[i];
+                break;}
         }
         return a;
     }
