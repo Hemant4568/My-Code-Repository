@@ -5,7 +5,7 @@ public:
         if(n==0)
             return 0;
         float x=log(n)/log(4);
-        if(ceil(x)==floor(x))
+        if(ceil(x)==x)
         return true;
         else 
             return false;
