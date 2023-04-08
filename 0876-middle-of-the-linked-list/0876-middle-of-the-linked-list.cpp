@@ -10,29 +10,15 @@
  */
 class Solution {
 public:
-    // ListNode* middleNode(ListNode* head) {
-    //     int n=head.size();
-    //     ListNode*ans;
-    //     while(head!=NULL)
-    //     {
-    //         ans
-    //     }
-    // }
-   
-ListNode* middleNode(ListNode* head) {
-int n=0;
-ListNode *temp=head;
-while(temp!=0){
-temp=temp->next;
-n++;
-}
-n=n/2;
-temp=head;
-while(n--){
-temp=temp->next;
-}
-return temp;
-
-}
-
+     ListNode* middleNode(ListNode* head) {
+        
+        ListNode *temp=head;
+         ListNode *temp1=head;
+        while(temp!=NULL && temp->next!=NULL)
+        {
+            temp=temp->next->next;
+            temp1=temp1->next;
+        }
+         return temp1;
+    }
 };
