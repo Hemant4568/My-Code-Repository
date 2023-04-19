@@ -9,7 +9,8 @@ public:
         }
         for(auto it:mp)
         {
-            if(it.second>nums.size()/3){
+            if(it.second>nums.size()/3)
+            {
                 ans.push_back(it.first);
             }
         }
