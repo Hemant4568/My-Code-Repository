@@ -19,7 +19,7 @@ public:
         {
             for(int j=0;j<n;j++)
             {
-                if(col[j]|| row[i])
+                if(col[j]==1|| row[i]==1)
                     matrix[i][j]=0;
             }
         }
