@@ -15,10 +15,11 @@ public:
         {
             slow=slow->next;
             fast=fast->next->next;
-            if(slow==fast){
+            if(slow==fast)
+            {
                 return 1;
-                break;}
-            
+                break;
+            }
         }
         return 0;
     }
