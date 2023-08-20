@@ -6,8 +6,6 @@ class Solution {
 public:
    static bool compare(pair<int,int> &p1,pair<int, int> &p2)
 {
-    if (p1.second == p2.second)
-        return p1.first < p2.first;
     return p1.second > p2.second;
 }
     vector<int> topKFrequent(vector<int>& nums, int k) {
@@ -23,13 +21,11 @@ public:
     for (auto it = mp.begin(); it != mp.end(); ++it)
       p[i++] = make_pair(it->first, it->second);
     sort(p, p + s, compare);
-    for (int i = 0; i < s; i++)
+    for (int i = 0; i < k; i++)
     {
-        while (k>0){
+        
             ans.push_back(p[i].first);
-            i++;
-            k--;
-        }
+        
         }
          return ans;      
     }
