@@ -23,7 +23,7 @@ public:
     }
     TreeNode* invertTree(TreeNode* root) {
         TreeNode* result=root;
-        solve(root);
+        solve(result);
         return result;
     }
 };
