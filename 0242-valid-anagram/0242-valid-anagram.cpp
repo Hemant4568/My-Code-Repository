@@ -1,8 +1,20 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
-      return s==t;
+        map<char,int>mp;
+        for(auto it:s)
+        {
+            mp[it]++;
+        }
+        for(auto it:t)
+        {
+            mp[it]--;
+        }
+        for(auto it:mp)
+        {
+            if(it.second!=0)
+                return 0;
+        }
+        return 1;
     }
 };
