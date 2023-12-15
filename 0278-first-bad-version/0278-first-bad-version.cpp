@@ -4,7 +4,7 @@
 class Solution {
 public:
     int firstBadVersion(int n) {
-      /* long long int small=0;
+       long long int small=0;
        long long int large=n;
      long long   int m;
         while(small<=large)
@@ -12,31 +12,13 @@ public:
            long long int mid=(small+large)/2;
             if(isBadVersion(mid)==1)
             {
-                m=mid;
-                large=large-1;
+                
+                large=mid-1;
             }
             else
-                small=small+1;
+                small=mid+1;
         }
-        return m;*/
-        long long int start = 0 ; 
-        long long int end = n ; 
-        long long int minBadVersion ;
-         
-        while (start <= end)
-        {
-            long long int mid = (start + end) / 2 ; 
-
-            if (isBadVersion(mid) == 1)
-            {
-                minBadVersion = mid ; 
-                end = mid - 1 ; 
-            }
-            else
-            {
-                start = mid + 1 ; 
-            }
-        }
-        return minBadVersion ;
+        return large+1;
+       
     }
 };
