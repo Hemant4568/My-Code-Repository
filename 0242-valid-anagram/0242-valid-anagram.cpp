@@ -1,20 +1,13 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        map<char,int>mp;
-        for(auto it:s)
-        {
-            mp[it]++;
-        }
-        for(auto it:t)
-        {
-            mp[it]--;
-        }
-        for(auto it:mp)
-        {
-            if(it.second!=0)
-                return 0;
-        }
-        return 1;
+        sort(s.begin(),s.end());
+        string temp=t;
+        sort(temp.begin(),temp.end());
+        cout<<s<<endl<<t;
+        if(s==temp && s.size()==temp.size())
+            return 1;
+        return 0;
+    
     }
 };
