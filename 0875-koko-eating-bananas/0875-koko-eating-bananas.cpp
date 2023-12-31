@@ -9,9 +9,9 @@ public:
         }
         return n;
     }
-  long long int find(vector<int>& piles, int k)
+   int find(vector<int>& piles, int k)
     {
-       long long int time=0;
+       int time=0;
         for(int i=0;i<piles.size();i++)
         {
           time+= (piles[i]/k)+(piles[i]%k!=0);
