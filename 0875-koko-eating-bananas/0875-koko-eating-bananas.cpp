@@ -14,7 +14,7 @@ public:
        int time=0;
         for(int i=0;i<piles.size();i++)
         {
-          time+= (piles[i]/k)+(piles[i]%k!=0);
+          time+=ceil ((double)piles[i]/(double)k);
 
         }
         return time;
