@@ -1,7 +1,7 @@
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-       int n = nums.size();
+      /* int n = nums.size();
         int low=0, high=n-1;
         
         while(low<high){
@@ -14,6 +14,10 @@ public:
             } 
         }
         if(nums[low] <= nums[high]) return nums[low];
-        return -1;
+        return -1;*/
+        sort(nums.begin(),nums.end());
+        int a=nums[0];
+        
+        return a;
     }
 };
