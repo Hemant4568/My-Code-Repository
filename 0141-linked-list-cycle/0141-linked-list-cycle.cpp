@@ -20,7 +20,7 @@ public:
             if(slow==fast)
             {
                 return 1;
-                break;
+               
             }
         }
         return 0;
