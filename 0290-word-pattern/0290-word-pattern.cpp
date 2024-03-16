@@ -1,28 +1,26 @@
 class Solution {
 public:
     bool wordPattern(string pattern, string s) {
-        map<char,string>mp;
-        map<string,char>mp1;
-        int j=0;
-        if(pattern=="he")
-            return 0;
-        for(char i:pattern)
-        {
-            string temp="";
-            while(s[j]!=' ' && j<s.size())
-            {
-                temp+=s[j];
-                j++;
-            }
-            if(s[j]==' ' && j<s.size())
-                j++;
-             if (mp.find(i) != mp.end() && mp[i] != temp)
+        map<char, string> mp;
+    map<string, char> mp1;
+    istringstream iss(s);
+    string word;
+    int j = 0;
+
+    for (char i : pattern) {
+        if (!(iss >> word)) 
             return false;
-        if (mp1.find(temp) != mp1.end() && mp1[temp] != i)
+
+        if (mp.find(i) != mp.end() && mp[i] != word)
             return false;
-            mp[i]=temp;
-            mp1[temp]=i;
-        }
-        return j==s.length();
+        
+        if (mp1.find(word) != mp1.end() && mp1[word] != i)
+            return false;
+        
+        mp[i] = word;
+        mp1[word] = i;
+    }
+
+    return !(iss >> word);
     }
 };
