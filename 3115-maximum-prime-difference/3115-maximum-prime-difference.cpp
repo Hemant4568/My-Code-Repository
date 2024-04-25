@@ -27,7 +27,7 @@ public:
          int minVal = temp[0];
     int maxDiff = temp[1] - temp[0];
 
-    for (int i = 1; i < temp.size(); ++i) {
+    for (int i = 2; i < temp.size(); ++i) {
         maxDiff = max(maxDiff, temp[i] - minVal);
         minVal = min(minVal, temp[i]);
     }
