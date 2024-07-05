@@ -9,16 +9,15 @@ public:
         char current=temp[0];
         for(int i=1;i<temp.size();i++)
         {
-            if(temp[i]==current)
+            if(temp[i]==temp[i-1])
                 c++;
             else
             {
-                result+=to_string(c)+current;
-                 current=temp[i];
+                result+=to_string(c)+temp[i-1];
                 c=1;
             }
         }
-        result+=to_string(c)+current;
+        result+=to_string(c)+temp.back();
         return result;
     }
 };
