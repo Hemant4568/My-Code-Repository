@@ -2,9 +2,7 @@ class Solution {
 public:
     bool canAliceWin(vector<int>& nums) {
         int sum1=0,sum2=0;
-        sort(nums.begin(),nums.end());
-        int i;
-        for( i=0;i<nums.size();i++)
+        for(int i=0;i<nums.size();i++)
         {
             int c=0;
             int a=nums[i];
