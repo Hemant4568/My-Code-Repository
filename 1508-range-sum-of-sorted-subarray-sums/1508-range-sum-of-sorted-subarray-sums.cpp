@@ -26,6 +26,6 @@ public:
         {
             sum=(sum+ans[i-1])%MOD;
         }
-        return sum%MOD;
+        return sum;
     }
 };
