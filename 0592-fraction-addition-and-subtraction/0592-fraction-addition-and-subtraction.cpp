@@ -11,21 +11,17 @@ public:
         
         while (ss >> sign) {
             int num, denom;
-            // If the sign is not + or -, reset the stream position to include the number
             if (sign != '+' && sign != '-') {
                 ss.putback(sign);
                 sign = '+';
             }
 
-            // Extract the fraction
             ss >> num;
-            ss.ignore();  // Ignore the '/'
+            ss.ignore();  
             ss >> denom;
 
-            // Adjust sign for subtraction
             if (sign == '-') num = -num;
 
-            // Update result fraction
             result_numerator = result_numerator * denom + num * result_denominator;
             result_denominator *= denom;
 
@@ -34,7 +30,6 @@ public:
             result_denominator /= g;
         }
 
-        // Return the final result in the form "numerator/denominator"
-        return std::to_string(result_numerator) + "/" + std::to_string(result_denominator);
+        return to_string(result_numerator) + "/" + to_string(result_denominator);
     }
 };
