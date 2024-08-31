@@ -1,6 +1,6 @@
 struct Compare {
     bool operator()(const pair<int, double>& p1, const pair<int, double>& p2) {
-        return p1.second < p2.second;  // Max-heap based on probabilities
+        return p1.second < p2.second;  
     }
 };
 class Solution {
@@ -20,17 +20,14 @@ public:
 
         pq.emplace(start, 1.0);
 
-        // Step 4: Process the graph
         while (!pq.empty()) {
             auto [node, prob] = pq.top();
             pq.pop();
 
-            // If we've reached the end node, return the probability
             if (node == end) {
                 return prob;
             }
 
-            // Explore neighbors
             for (auto& [neighbor, edgeProb] : graph[node]) {
                 double newProb = prob * edgeProb;
                 if (newProb > probabilities[neighbor]) {
@@ -40,7 +37,6 @@ public:
             }
         }
 
-        // If the end node is not reachable, return 0
         return 0.0;
     }
 };
